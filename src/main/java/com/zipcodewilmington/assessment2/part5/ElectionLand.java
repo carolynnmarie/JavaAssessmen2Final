@@ -7,10 +7,6 @@ import java.util.LinkedHashMap;
 
 public class ElectionLand {
 
-    ElectionLand(){
-
-    }
-
 
     public int countOccurences(String[] votes, String indexValue){
         int count = 0;
@@ -33,7 +29,9 @@ public class ElectionLand {
         }
         Collections.sort(candidates);
         int length = candidates.size();
-        return candidates.get(length-1);
+        if(length == 0) {
+            return null;
+        } else return candidates.get(length-1);
     }
 
 
