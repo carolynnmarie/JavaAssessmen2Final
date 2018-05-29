@@ -19,19 +19,20 @@ public class ElectionLand {
     }
 
     public String electionWinner(String[] votes){
+        int mostVotes = 0;
+        for(String candidate: votes){
+            if(countOccurences(votes, candidate)>mostVotes){
+                mostVotes = countOccurences(votes, candidate);
+            }
+        }
         ArrayList<String> candidates = new ArrayList<>();
-        for(int i = 0; i<votes.length; i++){
-            for(int j = 0; j<votes.length; j++) {
-                if(countOccurences(votes, votes[i]) > countOccurences(votes, votes[j])) {
-                    candidates.add(votes[i]);
-                }
+        for(String candidate: votes) {
+            if(countOccurences(votes,candidate) == mostVotes){
+                candidates.add(candidate);
             }
         }
         Collections.sort(candidates);
-        int length = candidates.size();
-        if(length == 0) {
-            return null;
-        } else return candidates.get(length-1);
+        return candidates.get(candidates.size()-1);
     }
 
 
