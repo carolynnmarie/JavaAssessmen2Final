@@ -18,13 +18,18 @@ public class ElectionLand {
         return count;
     }
 
-    public String electionWinner(String[] votes){
+    public int mostVotes(String[] votes){
         int mostVotes = 0;
         for(String candidate: votes){
             if(countOccurences(votes, candidate)>mostVotes){
                 mostVotes = countOccurences(votes, candidate);
             }
         }
+        return mostVotes;
+    }
+
+    public String electionWinner(String[] votes){
+        int mostVotes = mostVotes(votes);
         ArrayList<String> candidates = new ArrayList<>();
         for(String candidate: votes) {
             if(countOccurences(votes,candidate) == mostVotes){

@@ -10,26 +10,10 @@ public enum RockPaperScissors {
     }
 
     public RockPaperScissors getWinningSign(){
-        RockPaperScissors winner = null;
-        if(this.equals(ROCK)) {
-            winner = PAPER;
-        } else if (this.equals(PAPER)) {
-            winner = SCISSORS;
-        } else if (this.equals(SCISSORS)){
-            winner = ROCK;
-        }
-        return winner;
+        return this.equals(ROCK)?PAPER: (this.equals(PAPER))?SCISSORS:ROCK;
     }
 
     public RockPaperScissors getLosingSign(){
-        RockPaperScissors loser = null;
-        if(this.equals(ROCK)) {
-            loser = SCISSORS;
-        } else if (this.equals(PAPER)) {
-            loser = ROCK;
-        } else if (this.equals(SCISSORS)){
-            loser = PAPER;
-        }
-        return loser;
+        return (this.equals(ROCK))?SCISSORS:(this.equals(PAPER))? ROCK: PAPER;
     }
 }

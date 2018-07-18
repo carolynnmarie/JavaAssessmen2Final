@@ -12,18 +12,15 @@ public class WuTangConcatenator {
     }
 
     public boolean isWu(){
-        if(input%3 == 0) return true;
-        else return false;
+        return (input%3 == 0) ? true: false;
     }
 
     public boolean isTang(){
-        if(input%5 == 0) return true;
-        else return false;
+        return(input%5 == 0)?true: false;
     }
 
     public boolean isWuTang(){
-        if(input%15 == 0) return true;
-        else return false;
+        return (input%15 == 0) ? true: false;
     }
 
 }

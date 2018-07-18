@@ -19,25 +19,21 @@ public class Geometry implements Circle, Rectangle {
     }
 
     public int getArea(int height, int width) {
-        int rectangleArea = this.height * this.width;
-        return rectangleArea;
+        return height * width;
     }
 
     public double getArea(int radius) {
-        double circleArea = this.radius * this.radius * 3.14;
-        return circleArea;
+        return radius * radius * 3.14;
     }
 
 
     @Override
     public double area(int radius) {
-        double circleArea = this.radius * this.radius * 3.14;
-        return circleArea;
+        return radius * radius * 3.14;
     }
 
     @Override
     public int area(int height, int width) {
-        int rectangleArea = this.height * this.width;
-        return rectangleArea;
+        return height * width;
     }
 }
